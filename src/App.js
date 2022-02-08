@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
+import Login from "./pages/Login";
 
 import "./app.css";
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       <Navbar />
       {/* <Home /> */}
-      <Post />
+      {/* <Post /> */}
+      <Login />
     </div>
   );
 }
