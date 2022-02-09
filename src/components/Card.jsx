@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ post }) => {
   return (
     <div className="card">
-      <span className="cardTitle">{post.title}</span>
       <img className="cardImg" src={post.img} alt={`${post.title} image`} />
+      <h1 className="cardTitle">{post.title}</h1>
       <p className="desc">{post.desc}</p>
-      <button className="cardButton">Read More</button>
+      <Link to={`/post/${post.id}`}>
+        <button className="cardButton">Read More</button>
+      </Link>
     </div>
   );
 };

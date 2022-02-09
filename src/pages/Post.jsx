@@ -1,8 +1,16 @@
 import React from "react";
+import { useParams, Navigate } from "react-router-dom";
 import { posts } from "../data";
 
 const Post = () => {
-  const post = posts[1];
+  const { id } = useParams();
+
+  const post = posts.find((post) => id == post.id);
+
+  if (!post) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className="post">
       <img src={post.img} alt={`${post.title} image`} className="postImg" />

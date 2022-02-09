@@ -8,18 +8,21 @@ import Login from "./pages/Login";
 import "./app.css";
 
 function App() {
-  const user = false;
+  const user = true;
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route
           path="/login"
           element={user ? <Navigate to="/" /> : <Login />}
         ></Route>
-        <Route path="/post/:id" element={<Post />}></Route>
+        <Route
+          path="/post/:id"
+          element={user ? <Post /> : <Navigate to="/login" />}
+        ></Route>
       </Routes>
     </>
   );
